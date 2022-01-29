@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- BELOW LINE IS NEEDED TO ENABLE ALL ANNOTATIONS -->
+	<context:annotation-config />
+
+
+	<!-- FOR USING XML -->
+	<bean class="com.spring.beanlifecycle.UsingXml" name="usingx"
+		init-method="init" destroy-method="destroy">
+		<property name="name" value="Testing challiye" />
+	</bean>
+
+
+
+	<!-- FOR USING INTERFACES -->
+	<bean class="com.spring.beanlifecycle.UsingInterface"
+		name="usingi">
+		<property name="name" value="ITS USING INTERFACE" />
+	</bean>
+
+
+
+	<!-- FOR USING ANNOTATIONS -->
+	<bean class="com.spring.beanlifecycle.UsingAnnotations"
+		name="usinga">
+		<property name="name" value="ITS USING ANNOTATION" />
+	</bean>
+	<!-- TO ENABLE ONLE PRE AND POST PROCESS ANNOTATIONS -->
+	<bean
+		class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor" />
+
+
+</beans>

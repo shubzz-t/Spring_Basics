@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="com.spring.constructorinj.Certificate" name="cert">
+		<constructor-arg value="JDBC CERTIFICATE" />
+	</bean>
+
+	<bean class="com.spring.constructorinj.Construct" name="construct">
+		<constructor-arg value="1" />
+		<constructor-arg value="Shubham" />
+		<constructor-arg ref="cert" />
+		<constructor-arg>
+			<list>
+				<value>YYYY</value>
+				<value>bbbb</value>
+				<value>zzzz</value>
+				<value>xxx</value>
+			</list>
+		</constructor-arg>
+	</bean>
+</beans>
